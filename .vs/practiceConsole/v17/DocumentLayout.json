@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\edwar\\source\\repos\\practiceConsole\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CA9F7922-0B2F-447C-8754-6FDC498D3322}|practiceConsole\\practiceConsole.csproj|c:\\users\\edwar\\source\\repos\\practiceconsole\\practiceconsole\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA9F7922-0B2F-447C-8754-6FDC498D3322}|practiceConsole\\practiceConsole.csproj|solutionrelative:practiceconsole\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA9F7922-0B2F-447C-8754-6FDC498D3322}|practiceConsole\\practiceConsole.csproj|c:\\users\\edwar\\source\\repos\\practiceconsole\\practiceconsole\\infostudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA9F7922-0B2F-447C-8754-6FDC498D3322}|practiceConsole\\practiceConsole.csproj|solutionrelative:practiceconsole\\infostudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InfoStudent.cs",
+              "DocumentMoniker": "C:\\Users\\edwar\\source\\repos\\practiceConsole\\practiceConsole\\InfoStudent.cs",
+              "RelativeDocumentMoniker": "practiceConsole\\InfoStudent.cs",
+              "ToolTip": "C:\\Users\\edwar\\source\\repos\\practiceConsole\\practiceConsole\\InfoStudent.cs",
+              "RelativeToolTip": "practiceConsole\\InfoStudent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAwwBwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T04:38:52.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StudentService.cs",
+              "DocumentMoniker": "C:\\Users\\edwar\\source\\repos\\practiceConsole\\practiceConsole\\StudentService.cs",
+              "RelativeDocumentMoniker": "practiceConsole\\StudentService.cs",
+              "ToolTip": "C:\\Users\\edwar\\source\\repos\\practiceConsole\\practiceConsole\\StudentService.cs",
+              "RelativeToolTip": "practiceConsole\\StudentService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAcwCUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T14:50:05.305Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
