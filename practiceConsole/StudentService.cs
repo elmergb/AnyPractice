@@ -33,13 +33,15 @@ class StudentService
         //string average1 = student1.studentAverage(grades1); 
         //Console.WriteLine($"{name1}\n {checkers} \n {grades1} {average1}");
 
-        InfoStudent stud = new InfoStudent();
+        //InfoStudent stud = new InfoStudent();
 
-        stud.Age = -2;
-        int myAge = stud.Age;
+        //stud.Age = -2;
+        //int myAge = stud.Age;
 
-        Console.WriteLine(myAge);
+        //Console.WriteLine(myAge);
 
-
+        object letter = 21;
+        if (letter is string s) Console.WriteLine($"The letter is {s}");
+        else Console.WriteLine("Not a string");
     }
 }

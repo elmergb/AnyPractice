@@ -12,3 +12,4 @@ C:\Users\edwar\source\repos\practiceConsole\practiceConsole\obj\Debug\net8.0\ref
 C:\Users\edwar\source\repos\practiceConsole\practiceConsole\obj\Debug\net8.0\practiceConsole.pdb
 C:\Users\edwar\source\repos\practiceConsole\practiceConsole\obj\Debug\net8.0\practiceConsole.genruntimeconfig.cache
 C:\Users\edwar\source\repos\practiceConsole\practiceConsole\obj\Debug\net8.0\ref\practiceConsole.dll
+C:\Users\edwar\source\repos\practiceConsole\practiceConsole\obj\Debug\net8.0\practiceConsole.sourcelink.json
