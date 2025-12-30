@@ -40,8 +40,32 @@ class StudentService
 
         //Console.WriteLine(myAge);
 
-        object letter = 21;
-        if (letter is string s) Console.WriteLine($"The letter is {s}");
-        else Console.WriteLine("Not a string");
+        #region -- practice
+        //object letter = 21;
+        //if (letter is string s) Console.WriteLine($"The letter is {s}");
+        //else Console.WriteLine("Not a string");
+        #endregion
+        #region -- parse
+        //string num1 = "200";
+        //int num2 = Convert.ToInt32(num1);
+        ////var num2 = int.Parse(num1);
+        //int result = num2 + 300;
+        //Console.WriteLine($"the result is: {result} ");
+
+        string age = "33";
+        
+        if (int.TryParse(age, out int result))
+        {
+            Console.WriteLine($"Your age is {age}");
+        }
+        else
+        {
+            Console.WriteLine($"you can't tryparse this value {age}");
+        }
+
+
+        #endregion  
+
+
     }
 }
