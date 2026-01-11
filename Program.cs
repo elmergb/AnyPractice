@@ -1,22 +1,26 @@
 ﻿using System;
-using System.Diagnostics.Metrics;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace LinqLamda
+namespace ClassStruct
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            
-            var countries = new[] {"Philippines", "USA", "Japan", "Singapore" };
 
-            var linqResult = from country in countries where country.Contains("P")  select country;
-            foreach (string country in linqResult)
+            var elmer = new Person()
             {
-                Console.WriteLine(country);
-            } 
+                FirstName = "Elmer",
+                LastName = "Abrea",
+                Nickname = "Ako lang malakas",
+                MyMoney = 10
+            };
 
+            Console.WriteLine($@"{elmer.FullName}
+                                 Nickname:{elmer.Nickname} {elmer.MyMoney}");
         }
     }
 }
