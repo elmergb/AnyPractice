@@ -1,26 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ClassStruct
+﻿namespace Program
 {
-    public class Program
+    internal class Program
     {
-        public static void Main(string[] args)
+        public void printName (params string[] name)
         {
+            Console.WriteLine(string.Join(", ", name));
+        }
 
-            var elmer = new Person()
-            {
-                FirstName = "Elmer",
-                LastName = "Abrea",
-                Nickname = "Ako lang malakas",
-                MyMoney = 10
-            };
+        public int sampleNumber(int num)
+        {
+            if (num == 1)
+                return num;
 
-            Console.WriteLine($@"{elmer.FullName}
-                                 Nickname:{elmer.Nickname} {elmer.MyMoney}");
+            return num * sampleNumber(num - 1);
+        }
+        static void Main(string[] Args)
+        {
+            var program = new Program();
+
+            program.printName("Elmer", "Heather", "Savanah");
+
+            var sum = program.sampleNumber(3);
+
+            Console.WriteLine(sum);
         }
     }
 }
