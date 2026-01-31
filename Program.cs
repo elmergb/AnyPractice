@@ -1,62 +1,54 @@
 ﻿using System;
+using System.Collections.Generic;
 
-public static class Hello
+namespace sendOTP
 {
-   
-    public static string Upper(this string s)
+    public class CacheItem<T>
     {
-        if (string.IsNullOrEmpty(s))
-        {
-            return s;
-        }
-
-        return char.ToUpper(s[0]) + s.Substring(s[1]);
+        public T Value { get; set; }
+        public DateTime Expiration { get; set; }
     }
 
-}
-public class Program
-{
-    public static void Main(String[] args)
+    public class SimpleCache<T>
     {
-        int[] number = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        List<string> students = ["elmer", "heather", "savanah" ];
+        private Dictionary <string, CacheItem<T>> _cache = new(); 
 
-        var num = String.Join(",", number); 
-
-        foreach (var student in students)
+        public void Set(string key, T value, TimeSpan tll )
         {
-            Console.WriteLine($@"Name: {student.Upper}");
+            var item = new CacheItem<T>
+            {
+                Value = value,
+                Expiration = DateTime.Now.Add(tll)
+            };
+            _cache.Add(key, item);
         }
 
-        Console.WriteLine(num);
-        foreach (var r in num)
+        public T Get(string e)
         {
-            Console.Write(r);
-        }
-        //string songLyrics = "You say goodbye, and I say hello";
-        //Console.WriteLine(songLyrics.Contains("goodbye"));
-        //Console.WriteLine(songLyrics.Contains("greetings"));
-        string sayHello = "Hello World!";
-        Console.WriteLine(sayHello);
-        sayHello = sayHello.Replace("World!", "Greetings");
-        Console.WriteLine(sayHello);
-        Console.WriteLine($"{number[2]}");
-        Console.WriteLine("----------");
-        string songLyrics = "You say goodbye, and I say hello";
-        Console.WriteLine(songLyrics.StartsWith("You"));
-        Console.WriteLine(songLyrics.StartsWith("goodbye"));
+            if (!_cache.ContainsKey(e))
+                return default;
+            // tinawag ang dictionary na may lamang "E" depende sa lalagay sa parameter sa method
+            var item = _cache[e];
 
-        Console.WriteLine(songLyrics.EndsWith("hello"));
-        Console.WriteLine(songLyrics.EndsWith("goodbye"));
-
-        if (songLyrics.StartsWith("Y"))
-        {
-            Console.WriteLine("Yes");
-        } else
-        {
-            Console.WriteLine("hINDI E");
+            if (item.Expiration != null && item.Expiration < DateTime.Now)
+            {
+                Console.WriteLine("Expired");
+                _cache.Remove(e);
+                return default;
+            }
+            return item.Value;
         }
     }
+    public class sendOTP 
+    {
+        static void Main(string[] args)
+        {
+            var otp = new SimpleCache<object>();
+            otp.Set("OTP", 12345, TimeSpan.FromSeconds(2));
 
-
+            //Task.Delay(5000).Wait();
+            var get = otp.Get("OTP");
+            Console.WriteLine(get);
+        }
+    }
 }
