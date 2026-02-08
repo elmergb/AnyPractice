@@ -1,54 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+var builder = WebApplication.CreateBuilder(args);
 
-namespace sendOTP
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
 {
-    public class CacheItem<T>
-    {
-        public T Value { get; set; }
-        public DateTime Expiration { get; set; }
-    }
+    app.UseExceptionHandler("/Home/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
+} 
 
-    public class SimpleCache<T>
-    {
-        private Dictionary <string, CacheItem<T>> _cache = new(); 
+app.UseHttpsRedirection();
+app.UseStaticFiles();
 
-        public void Set(string key, T value, TimeSpan tll )
-        {
-            var item = new CacheItem<T>
-            {
-                Value = value,
-                Expiration = DateTime.Now.Add(tll)
-            };
-            _cache.Add(key, item);
-        }
+app.UseRouting();
 
-        public T Get(string e)
-        {
-            if (!_cache.ContainsKey(e))
-                return default;
-            // tinawag ang dictionary na may lamang "E" depende sa lalagay sa parameter sa method
-            var item = _cache[e];
+app.UseAuthorization();
 
-            if (item.Expiration != null && item.Expiration < DateTime.Now)
-            {
-                Console.WriteLine("Expired");
-                _cache.Remove(e);
-                return default;
-            }
-            return item.Value;
-        }
-    }
-    public class sendOTP 
-    {
-        static void Main(string[] args)
-        {
-            var otp = new SimpleCache<object>();
-            otp.Set("OTP", 12345, TimeSpan.FromSeconds(2));
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            //Task.Delay(5000).Wait();
-            var get = otp.Get("OTP");
-            Console.WriteLine(get);
-        }
-    }
-}
+app.Run();
+
